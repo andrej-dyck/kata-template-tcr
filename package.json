@@ -1,5 +1,5 @@
 {
-  "name": "ad-kata-tcr",
+  "name": "ad-kata-template-tcr",
   "description": "",
   "version": "1.0.0",
   "private": true,
@@ -16,8 +16,12 @@
     "lint": "eslint . --ext .ts",
     "test": "npm run lint && jest"
   },
+  "bin": {
+    "tcr-hook": "bin/test-commit-revert-hook.js"
+  },
   "devDependencies": {
     "@types/jest": "^29.2.2",
+    "@types/node": "^18.11.9",
     "@typescript-eslint/eslint-plugin": "^5.42.1",
     "@typescript-eslint/parser": "^5.42.1",
     "eslint": "^8.27.0",

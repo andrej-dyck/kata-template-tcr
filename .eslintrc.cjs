@@ -5,6 +5,7 @@ module.exports = {
     'plugin:@typescript-eslint/recommended-requiring-type-checking',
     'plugin:@typescript-eslint/strict',
   ],
+  ignorePatterns: ['bin'],
   overrides: [{
     files: ['**/*.test.ts'],
     plugins: ['jest'],

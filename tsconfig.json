@@ -25,6 +25,6 @@
     "types": ["node", "jest"]
   },
   "include": [
-    "src"
+    "src", "bin"
   ]
 }
