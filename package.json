@@ -17,7 +17,8 @@
     "test": "npm run lint && jest"
   },
   "bin": {
-    "tcr-hook": "bin/test-commit-revert-hook.js"
+    "tcr-hook": "bin/test-commit-revert-hook.js",
+    "tcr": "bin/test-commit-revert.js"
   },
   "devDependencies": {
     "@types/jest": "^29.2.2",
