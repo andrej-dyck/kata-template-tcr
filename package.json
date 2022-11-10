@@ -18,13 +18,15 @@
   },
   "bin": {
     "tcr-hook": "bin/test-commit-revert-hook.js",
-    "tcr": "bin/test-commit-revert.js"
+    "tcr": "bin/test-commit-revert.js",
+    "tcr-timeboxed": "bin/test-commit-revert-timeboxed.js"
   },
   "devDependencies": {
     "@types/jest": "^29.2.2",
     "@types/node": "^18.11.9",
     "@typescript-eslint/eslint-plugin": "^5.42.1",
     "@typescript-eslint/parser": "^5.42.1",
+    "dayjs": "^1.11.6",
     "eslint": "^8.27.0",
     "eslint-plugin-jest": "^27.1.4",
     "husky": "^8.0.2",

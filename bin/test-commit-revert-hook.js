@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import { testOrRevert } from './test-or-revert.js'
+import { testOrRevert } from './tcr.js'
 
 const success = () => 0
 

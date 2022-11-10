@@ -1,4 +1,5 @@
 import { exec } from 'node:child_process'
+import { promisify } from 'node:util'
 
 export const shellExec = (command, logger = console) => {
   const execution = exec(command)
@@ -11,4 +12,9 @@ export const shellExec = (command, logger = console) => {
       code === 0 ? resolve({ code }) : reject({ code })
     })
   })
+}
+
+export const silentExec = async (command) => {
+  const { stdout } = await promisify(exec)(command)
+  return stdout.trim()
 }
