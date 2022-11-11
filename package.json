@@ -14,13 +14,11 @@
     "prepare": "husky install .config/husky",
     "build": "tsc",
     "lint": "eslint . --ext .ts",
-    "test": "npm run lint && jest"
-  },
-  "bin": {
-    "tcr-hook": "bin/test-commit-revert-hook.js",
-    "tcr": "bin/test-commit-revert.js",
-    "tcr-timeboxed": "bin/test-commit-revert-timeboxed.js",
-    "tc": "bin/test-commit.js"
+    "test": "npm run lint && jest",
+    "tcr-hook": "node ./bin/test-commit-revert-hook.js",
+    "tcr": "node ./bin/test-commit-revert.js",
+    "tcr-timeboxed": "node ./bin/test-commit-revert-timeboxed.js",
+    "tc": "node ./bin/test-commit.js"
   },
   "devDependencies": {
     "@types/jest": "^29.2.2",
