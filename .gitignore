@@ -22,3 +22,8 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# lock files - as this is a template repository
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
