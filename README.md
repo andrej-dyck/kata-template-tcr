@@ -23,4 +23,6 @@ This is a starter project for a _coding kata_ using `test && commit || revert` a
 * Commit often
   * Use Git as you are used to (the pre-commit hook will be executed)
   * Use `npx tcr` to commit (it will execute `test && commit || revert`)
-  * Use `npx tcr-timeboxed 5` to continuously `test && commit || revert` in `5` minute intervalls (combine it with `npx tcr` to commit earlier; cancel with `ctrl+c`)
+  * Use `npx tcr-timeboxed 5` to continuously `test && commit || revert` in `5` minute intervalls
+    * combine the exercise with `npx tcr` or `npx tc` (without reset) to commit early
+    * cancel with `ctrl+c`

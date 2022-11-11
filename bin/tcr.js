@@ -3,30 +3,37 @@ import { shellExec } from './shell-exec.js'
 export const tcr = (logger) =>
   testOrRevert({ onSuccess: tryCommit(logger) }, logger)
 
-export const testOrRevert = async (
+export const testOrRevert = (
   { onSuccess },
   logger = console,
 ) => {
-  logger.log('✅  test && ⏺  commit || ⏮  revert', process.argv)
+  const reset = async () => {
+    await shellExec('git reset --hard HEAD && git clean -fd', logger)
+    logger.log('⏮  hard reset\n')
+  }
 
+  return testOr({ onSuccess, onFailure: reset }, logger)
+}
+
+export const testOr = async (
+  { onSuccess, onFailure },
+  logger = console
+) => {
   logger.log('⏳  running tests')
   return await shellExec('npm run test', logger)
-    .then(({ code }) => {
+    .then(async ({ code }) => {
       logger.log('✅  tests successful')
 
-      return onSuccess() ?? code
+      return await onSuccess() ?? code
     })
     .catch(async ({ code }) => {
       logger.error('❌  tests failed')
 
-      await shellExec('git reset --hard HEAD && git clean -fd', logger)
-      logger.log('⏮  hard reset\n')
-
-      return code
+      return await onFailure() ?? code
     })
 }
 
-const tryCommit = (logger) => () => {
+export const tryCommit = (logger) => () => {
   logger.log('⏳  committing work...')
 
   return shellExec('git add . && git commit -m "it works" --no-verify', logger)
@@ -39,4 +46,3 @@ const tryCommit = (logger) => () => {
       return code
     })
 }
-

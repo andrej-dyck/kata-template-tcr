@@ -19,7 +19,8 @@
   "bin": {
     "tcr-hook": "bin/test-commit-revert-hook.js",
     "tcr": "bin/test-commit-revert.js",
-    "tcr-timeboxed": "bin/test-commit-revert-timeboxed.js"
+    "tcr-timeboxed": "bin/test-commit-revert-timeboxed.js",
+    "tc": "bin/test-commit.js"
   },
   "devDependencies": {
     "@types/jest": "^29.2.2",
