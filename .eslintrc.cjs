@@ -2,7 +2,6 @@ module.exports = {
   extends: [
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
-    'plugin:@typescript-eslint/recommended-requiring-type-checking',
     'plugin:@typescript-eslint/strict',
   ],
   ignorePatterns: ['bin'],
@@ -24,8 +23,8 @@ module.exports = {
   ],
   rules: {
     'indent': ['error', 2],
-    'quotes': ['error', 'single'],
-    'semi': ['error', 'never'],
+    'quotes': ['warn', 'single'],
+    'semi': ['warn', 'never'],
     'space-unary-ops': ['error'],
     'consistent-return': ['error'],
     'no-else-return': ['warn'],
